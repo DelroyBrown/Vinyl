@@ -12,8 +12,8 @@ SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['db-vinylproject.herokuapp.com',
-                 '127.0.0.1', '.vinylproject.co.uk']
+ALLOWED_HOSTS = ['thevinylproject.herokuapp.com',
+                 '127.0.0.1']
 
 
 # Application definition
