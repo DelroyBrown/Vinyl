@@ -1,0 +1,2 @@
+{% load i18n %}
+{% blocktrans %}Sad to see you go :({% endblocktrans %}

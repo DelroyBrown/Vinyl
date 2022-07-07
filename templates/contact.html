@@ -1,0 +1,66 @@
+{% extends 'no_header_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<body class="contact-body">
+    <div class="mt-5 flexed contact-form-wrap">
+        <div class="container contact-form-wrap2" data-aos="fade">
+            <div class="row justify-content-center">
+                <div class="col-md-7">
+                    <h3 class="h3 mb-3 text-black">SEND US A MESSAGE</h3>
+                </div>
+                <div class="col-md-7">
+                    <form method="POST" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <!-- <div id="div_id_name" class="form-group"> <label for="id_name" class=" requiredField">
+                                Name<span class="asteriskField">*</span> </label>
+                            <div class=""> <input type="text" name="name" placeholder="Name" maxlength="100"
+                                    class="textinput textInput form-control" required="" id="id_name"> </div>
+                        </div>
+
+                        <div id="div_id_email" class="form-group"> <label for="id_email" class=" requiredField">
+                                Email<span class="asteriskField">*</span> </label>
+                            <div class=""> <input type="text" name="email" placeholder="Email"
+                                    class="textinput textInput form-control" required="" id="id_email"> </div>
+                        </div>
+
+                        <div id="div_id_message" class="form-group"> <label for="id_message" class=" requiredField">
+                                Message<span class="asteriskField">*</span> </label>
+                            <div class=""> <textarea name="message" cols="40" rows="10"
+                                    placeholder="A messages regarding any issues or queries"
+                                    class="textarea form-control" required="" id="id_message"></textarea> </div>
+                        </div> -->
+
+
+                        <input type="submit" class="submit-message-btn" value="Submit Message">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if messages %}
+    <div class="flexed message-sent-container">
+        <h3 style="color: #222; text-align:center;" data-aos="fade">Thanks!<br>We've received your message and will get
+            to you ASAP!</h3>
+        <div class="smiley-face-wrap mt-2" data-aos="fade">
+            <img src="{% static 'images/smiley.png' %}" alt="smiley face" class="sad1 sad-face-img">
+            <img src="{% static 'images/smileydark.png' %}" alt="smiley face" class="sad2 sad-face-img">
+            <img src="{% static 'images/smiley.png' %}" alt="smiley face" class="sad1 sad-face-img">
+            <img src="{% static 'images/smileydark.png' %}" alt="smiley face" class="sad2 sad-face-img">
+            <img src="{% static 'images/smiley.png' %}" alt="smiley face" class="sad1 sad-face-img">
+            <img src="{% static 'images/smileydark.png' %}" alt="smiley face" class="sad2 sad-face-img">
+        </div>
+        <div class="mt-5 message-sent-btns-wrap">
+            <a class="message-sent-btns mr-3" href="/">⟵ Back Home</a>
+            <a class="message-sent-btns" href="{% url 'cart:product-list' %}">Vinyl Crate</a>
+        </div>
+    </div>
+    {% endif %}
+</body>
+
+{% endblock content %}
